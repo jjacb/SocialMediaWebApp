@@ -1,0 +1,52 @@
+Roles for week one:
+Manager/Admin App: John
+Front-end: Jacob
+Back-end: Laura
+Android: Dylan
+
+Roles for week two:
+Manager/Admin App: Dylan
+Front-end: John
+Back-end: Jacob
+Android: Laura
+
+General Design:
+Make an app similar to YikYak, location chosen by user.  Users post anonymously.
+
+Tasks:
+
+Manager: 
+Trello boards
+Make Bitbucket (from p0?)
+Deploy server to HerokuApp
+Code-reviews
+
+Admin-app:
+Make sure standalone java can DROP etc from DB tables without backend
+unit-testing
+
+Front-end:
+Use POST and GET requests for grabbing and displaying “likes”
+JSON formatting
+Handlebars for formatting and Bootstrap for styling
+Jasmine testing
+
+Back-end:
+Remove titles?
+Add rows to DB table: likes
+Add “user” table to DB: userid, username, location
+Unit tests for back-end
+Routes should be available for  (and similar) for use with web and android
+users
+users/uid
+users/uid/location
+users/uid/username
+messages
+messages/mid
+messages/mid/likes
+
+Android:
+Show list of messages
+Add form for adding messages
+Allow lock screen in portrait mode
+

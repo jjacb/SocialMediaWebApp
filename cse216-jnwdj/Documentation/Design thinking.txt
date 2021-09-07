@@ -1,0 +1,13 @@
+Topics: Discussion, Education, College, Anonymous
+
+Who is it for:  
+Our app will be primarily targetted at college students to discuss gossip, politics, or any topic they may wish to discuss anonymously, specifically with other college students
+that are geographically near them.
+
+What will the app help people do:
+We will help people to read and upvote/downvote the opinions of other people in their area, and post their own views anonymously.
+
+How will we help them:
+By allowing users to post and vote anonymously, they can express their opinions and see whether they may be in the majority or minority among their peers.  This will allow them to 
+discuss issues they may not feel comfortable talking about in person.
+

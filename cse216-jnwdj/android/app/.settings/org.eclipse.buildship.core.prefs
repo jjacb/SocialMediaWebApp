@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+=======
+arguments=
+auto.sync=false
+build.scans.enabled=false
+connection.gradle.distribution=GRADLE_DISTRIBUTION(VERSION(6.0-20191016123526+0000))
+>>>>>>> web-jurecki
+connection.project.dir=..
+eclipse.preferences.version=1

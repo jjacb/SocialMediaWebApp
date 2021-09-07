@@ -1,0 +1,9 @@
+If you get a null pointer exception from mvn exec:java, you need to set the environment variable 
+DATABASE_URL = postgres://zlaennwxsskfdj:cecfea3727b02543045f3779ef412fcf1e31a121325e45a448a7d227a6f61bd6@ec2-54-235-92-244.compute-1.amazonaws.com:5432/d2tdob33qt6k0f
+
+This value is also available through “heroku config” if you’ve downloaded heroku CLI (tutorial 8)
+
+Most of the operations you would want to do are now available, (check the commands with ?).  But you can not change the uid of a message (this may or may not be desirable).
+
+
+

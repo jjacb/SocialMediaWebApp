@@ -1,0 +1,18 @@
+Our heroku app is located at: https://radiant-spire-42063.herokuapp.com
+I think I will leave it up for now but if you’d like to turn the site on or off for yourself you will need to follow tutorial 8.  The gist of it it you need heroku command line tools then you can do:
+Turn site off:
+heroku ps:scale web=0 -a radiant-spire-42063
+Turn site on:
+heroku ps:scale web=1 -a radiant-spire-42063
+
+The buttons on the site don’t work at the moment but I think the database just needs to be changed in the frontend code.  This can be done by connecting (as the backend and admin should already be doing) to our new DATABASE_URL (this is an environment variable that can be set on command line) to:
+ postgres://zlaennwxsskfdj:cecfea3727b02543045f3779ef412fcf1e31a121325e45a448a7d227a6f61bd6@ec2-54-235-92-244.compute-1.amazonaws.com:5432/d2tdob33qt6k0f
+
+Your 3 respective branches were created based on master but are now a few commits behind master.  This can be remedied with “git pull origin master”
+
+To enter your branch, you should cd into your folder and then git checkout {branch}.  From there you should now see your branch and checkout from anywhere.
+
+Potentially helpful, Postman and Postico  (run tests without other branches and extra admin app)
+
+
+If there are any questions or issues with the current implementation, let me know.

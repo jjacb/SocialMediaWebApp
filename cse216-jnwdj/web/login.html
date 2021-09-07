@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <script src="jquery.min.js"></script>
+    <!--<script src="login.js"></script>-->
+    <link rel="stylesheet" href="app.css" />
+    <link href="https://fonts.googleapis.com/css?family=Fresca" rel="stylesheet">
+    <title>Welcome</title>
+
+    <style>
+        body {
+            background-color: #37474f;
+        }
+
+        h3 {
+            color: white;
+            font-family: "Roboto", sans-serif;
+            font-weight: 200;
+        }
+
+        .center {
+            margin-top: 10%;
+            text-align: center;
+        }
+    </style>
+
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id"
+        content="151775305975-4lh2ge5urppr6q4rrv4alsj4qvecldci.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</head>
+
+<body>
+    <!--<div id="login">
+        <h3>Please Log In</h3>
+            <label>Username</label>
+            <input type="text" id="username" required/>
+            <label>Password</label>
+            <input type="text" id="password" required/>
+            <button id="submitButton">Submit</button>
+            <button id="cancelButton">Cancel</button>
+    </div>-->
+
+    <div class='center'>
+        <h3>Welcome to Login with Google</h3>
+        <br><br><br>
+        <div style="display: flex; justify-content: center">
+            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="light" data-width="300" data-height="50"
+                data-longtitle="true"></div>
+        </div>
+        <br>
+        <!--<button disabled class="mdl-button mdl-js-button mdl-button--raised" id="signout" name="signout">Sign Out</button>-->
+        <a href="#" onclick="signOut();">Sign out</a>
+    </div>
+
+    <script>
+        function onSuccess(googleUser) {
+            console.log('onSuccess!');
+        }
+
+        function onSignIn(googleUser) {
+            // Useful data for your client-side scripts:
+            var profile = googleUser.getBasicProfile();
+            console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+            console.log('Full Name: ' + profile.getName());
+            console.log('Given Name: ' + profile.getGivenName());
+            console.log('Family Name: ' + profile.getFamilyName());
+            console.log("Image URL: " + profile.getImageUrl());
+            console.log("Email: " + profile.getEmail());
+
+            // The ID token you need to pass to your backend:
+            var id_token = googleUser.getAuthResponse().id_token;
+            console.log("ID Token: " + id_token);
+
+            $.ajax({
+                type: "POST",
+                url: "/userLogin",
+                dataType: "json",
+                data: JSON.stringify({ id_token: id_token }),
+                success: this.checkLogin
+            });
+        }
+
+        function checkLogin(data) {
+            if (data.mStatus === "ok") {
+                window.sessionStorage.setItem("uid", data.mMessage);
+                console.log("login UID: " + data.mMessage);
+                window.sessionStorage.setItem("session", data.mData);
+                window.location.replace("/index.html");
+            } else {
+                window.alert("Error message is: " + data.mMessage);
+            }
+        }
+
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+                auth2.disconnect();
+            });
+            auth2.disconnect();
+        }
+
+        function onLoad() {
+            gapi.load('auth2', function () {
+                gapi.auth2.init();
+            });
+        }
+
+        //window.location.replace("/index.html");
+    </script>
+
+</body>
+
+</html>

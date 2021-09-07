@@ -1,0 +1,17 @@
+Database layout:
+Tables:
+
+userData: uid, username (String) , location (String) 
+
+messageData: mid, message (String) , votes (int), uid (reference to userData uid)
+
+The desired routes for backend should be in the other documentation file and in Trello.
+Frontend and Android may also need this info to better decide how to display data.
+
+DATABASE_URL = postgres://zlaennwxsskfdj:cecfea3727b02543045f3779ef412fcf1e31a121325e45a448a7d227a6f61bd6@ec2-54-235-92-244.compute-1.amazonaws.com:5432/d2tdob33qt6k0f
+
+Heroku:
+
+To deploy to heroku, first look at tutorial 8 on piazza, get heroku CLI.
+Next, if you’re on frontend run deploy.sh 
+Cd into backend and run mvn package, then mvn heroku:deploy
